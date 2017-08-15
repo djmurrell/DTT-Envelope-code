@@ -307,8 +307,14 @@ source("dtt1.R")
 	
 	m1<-read.tree("monkeys.rtf")
 	m1_traits<-read.csv("monkey.traits.csv",row.names=1)
+	x<-m1_traits
+	#m1_traits<-m1_traits[,1-2]
+	
+	rn<-row.names(x)
+	m2<-data.frame(pc=m1_traits[,1], row.names=rn)
+	
 	par(mfrow=c(2,1))
-	d1<-dtt(m1, m1_traits, plot=T, nsim=10000)
+	d1<-dtt(m1, m2, plot=T, nsim=10000)
 	r1<-rank_env_dtt(d1)
 	
 
