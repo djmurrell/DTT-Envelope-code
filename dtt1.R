@@ -1,5 +1,4 @@
 
-source("getMDI1.R")
 
 dtt1<-function (phy, data, index = c("avg.sq", "avg.manhattan", "num.states"), 
     mdi.range = c(0, 1), nsim = 0, CI = 0.95, plot = TRUE, calculateMDIp = F, Ylim=c(0,2)) 
