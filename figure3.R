@@ -5,9 +5,7 @@ library(spptest)
 library(geiger)
 #Number of simulations to sample from null model of Brownian evolution.
 #Recommendation for at least 2500
-
 nsims=5000
-
 #Slight alteration of dtt function in geiger
 source("dtt1.R")
 
