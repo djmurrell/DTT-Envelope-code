@@ -1,4 +1,4 @@
-Package: rankdtt
+Package: rdtt
 Type: Package
 Title: Rank envelope test for disparity through time
 Version: 0.1.0
@@ -7,7 +7,8 @@ Author: David Murrell <d.murrell@ucl.ac.uk>
 Maintainer: David Murrell <d.murrell@ucl.ac.uk>
 Depends:
 	ape (>= 3.0-6),
-	R (>= 2.15.0)
+	R (>= 2.15.0),
+	geiger
 Imports:
 	MASS,
 	mvtnorm,
