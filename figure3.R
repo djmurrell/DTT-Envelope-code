@@ -1,10 +1,8 @@
 install.packages("devtools")
 library(devtools)
 install_github('myllym/spptest', ref = 'no_fastdepth')
-
 library(spptest)
 library(geiger)
-
 #Number of simulations to sample from null model of Brownian evolution.
 #Recommendation for at least 2500
 
