@@ -1,7 +1,7 @@
 Package: rank_env_dtt
 Type: Package
 Title: Rank envelope test for disparity through time
-Version: 1
+Version: 0.1.0
 Date: 
 Author: David Murrell <d.murrell@ucl.ac.uk>
 Maintainer: David Murrell <d.murrell@ucl.ac.uk>
@@ -22,5 +22,4 @@ Imports:
 LinkingTo: Rcpp
 Description: Uses rank envelope tests.
 License: GPL (>= 2)
-URL: 
 ByteCompile: yes
