@@ -3,4 +3,24 @@ Type: Package
 Title: Rank envelope test for disparity through time
 Version: 1
 Date: 
-Author: David Murrell d.murrell@ucl.ac.uk
+Author: David Murrell <d.murrell@ucl.ac.uk>
+Maintainer: David Murrell <d.murrell@ucl.ac.uk>
+Depends:
+	ape (>= 3.0-6),
+	R (>= 2.15.0)
+Imports:
+	MASS,
+	mvtnorm,
+	subplex,
+	deSolve (>= 1.7),
+	digest,
+	Rcpp (>= 0.9.0),
+	coda,
+  ncbit,
+  colorspace,
+  methods
+LinkingTo: Rcpp
+Description: Uses rank envelope tests.
+License: GPL (>= 2)
+URL: 
+ByteCompile: yes
