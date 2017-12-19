@@ -1,4 +1,4 @@
-Package: rank_env_dtt
+Package: rankdtt
 Type: Package
 Title: Rank envelope test for disparity through time
 Version: 0.1.0
