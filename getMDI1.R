@@ -1,6 +1,9 @@
 #This is a modification of the MDI function in Geiger
 #Here the p-value is computed as in Slater GJ, Price, SA, Santini, F, Alfaro, MA. 2010. Proceedings of the Royal Society B. 277: 3097 -3104.
 #However, the original code is for a one-tailed test, and the modification below is for a two-tailed test.
+
+#The user needs to realise that since the test is two sided the reported p-value needs to be less than 0.025 for significance at the 5% level of significance
+
 #This function is called by dtt1 (which is turn a modification from Geiger).
 #
 #
