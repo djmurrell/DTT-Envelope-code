@@ -1,8 +1,6 @@
 # DTT-Envelope-code
 
-This code is used to produce the figures in the revised manuscript "A global envelope test to detect non-random bursts of trait evolution";
-
-(An earlier version can be found here doi: https://doi.org/10.1101/175968)
+This code is used to produce the figures in the revised manuscript "A global envelope test to detect non-random bursts of trait evolution" (an earlier version of which can be found here doi: https://doi.org/10.1101/175968).
 
 The file 
   figures.true-false.positives.R 
