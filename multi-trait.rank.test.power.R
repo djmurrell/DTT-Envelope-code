@@ -86,7 +86,7 @@ for(i in start:realisations)
 	d1<-dtt1(tree1, X1, nsim=nsims, plot=T, calculateMDIp=T)
 
 ##Note we need to decide if we are using the 1-tailed (p<0.05) or 2-tailed (p<0.025) version
-	if(d1$MDIp<0.025)
+	if(d1$MDIp<0.05)
 		mdi<-mdi+1
 		
 	cat("MDI-pvalue= ", d1$MDIp, "\n")
@@ -99,7 +99,7 @@ for(i in start:realisations)
 #
 #####################################################################
 
-	res<-rank_env_dtt(d1, test="two.sided")
+	res<-rank_env_dtt(d1, test="less")
 
 		
 	if(res$p<0.05)
