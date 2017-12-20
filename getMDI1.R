@@ -1,9 +1,6 @@
 #This is a modification of the MDI function in Geiger
-#Here the MDI value for the data is compared to the MDI value for each of the simulations of the null model
-#The data is 'significant' if it falls outside of either of the confidence intervals (ie is less than the 2.5% quantile
-#or greater than the 97.5% quantile).
-#
-#
+#Here the p-value is computed as in Slater GJ, Price, SA, Santini, F, Alfaro, MA. 2010. Proceedings of the Royal Society B. 277: 3097 -3104.
+#However, the original code is for a one-tailed test, and the modification below is for a two-tailed test.
 #This function is called by dtt1 (which is turn a modification from Geiger).
 #
 #
