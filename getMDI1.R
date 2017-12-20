@@ -5,7 +5,6 @@
 #
 #
 
-
 getMDIp<-function(dttRes) {
 	foo<-function(x) {
 		return(.area.between.curves(x= dttRes$times, f1=x, f2=dttRes$dtt))
