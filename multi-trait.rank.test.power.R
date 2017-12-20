@@ -45,7 +45,7 @@ spp_num<-10
 #
 #	Changing this variable only changesthe half life for the second trait 
 
-half_life<- -6
+half_life<- 0
 
 #We can loop through all species numbers
 #for(spp_num in c(10,20,30,40,50,60,70,80,100))
