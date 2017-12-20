@@ -1,7 +1,7 @@
 #
 #	This code tests false and true positive rates for the MDI and rank envelope tests when there are two traits
 #	In this case the relative disparity is computed using the modified dtt function of geiger, meaning the disparity value
-#	is multi-varaite (averaging over both traits at once)
+#	is multi-variate (averaging over both traits at once)
 #
 #	The rate of evolution for one trait is held constant with a half life of -4, and the half life for the second trait is allowed to vary
 #
