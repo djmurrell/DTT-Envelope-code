@@ -9,5 +9,5 @@ The file
  is R script to produce figures 2 and 3 that investigate the false and true positive rates of the candidate null model tests.
 
 The file 
-  empirical.data.R 
+  empirical.tests.R 
 is used to produce figure 4 and is the recommended pipeline for using datasets that would be analysed via the function dtt in the R library geiger.
