@@ -9,34 +9,16 @@
 #
 
 
-getMDIp1<-function (dttRes) 
-{
-    foo <- function(x) {
-    	avedtt<-apply(dttRes$sim,1,mean)
-        return(geiger:::.area.between.curves(x = dttRes$times, f1 = x, 
-            f2 = avedtt))
-    }
-    avedtt<-apply(dttRes$sim,1,mean)
-    mdis <- apply(dttRes$sim, 2, foo)
+getMDIp<-function(dttRes) {
+	foo<-function(x) {
+		return(.area.between.curves(x= dttRes$times, f1=x, f2=dttRes$dtt))
+	}
+	mdis<-apply(dttRes$sim,2,foo)
     
-    mdis<-sort(mdis)
-    #cat(mdis)
+    #Two sided test
+	p1<-length(which(mdis>=0))/length(mdis)
+    p2<-length(which(mdis<=0))/length(mdis)
     
-    pVal<-1
-        	
-    	cat(quantile(mdis, probs=c(0.025, 0.975)), '\n')
-    	cat(dttRes$MDI, '\n')
-    	
-    #if(dttRes$MDI<quantile(mdis, probs=c(0.025, 0.975))[1])
-    	#pVal<-0
-    #if(dttRes$MDI>quantile(mdis, probs=c(0.025, 0.975))[2])
-    	#pVal<-0
-    	
-    	
-    	if(dttRes$MDI<mdis[0.025*(nsims)])
-    		pVal<-0
-    	else if(dttRes$MDI>mdis[0.975*(nsims)])
-    		pVal<-0
-    		
-        return(pVal)
+    pVal<-min(p1,p2)
+	return(pVal)
 }
