@@ -2,6 +2,9 @@
 #
 #	Generic function to compute rank envelope test
 #
+#	two tailed test: test="two.sided"
+#	one sided tests: test="less" OR test="greater"
+#
 ####################################################
 
 rank_env_dtt<-function(x, Plot=T, test="two.sided")
