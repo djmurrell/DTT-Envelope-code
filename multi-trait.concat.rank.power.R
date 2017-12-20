@@ -4,9 +4,9 @@
 # Two traits are given independent evolution rates, and we compute separate DTT curves. These curves are then concatenated and the rank test is performed on the single (concatenated) curve
 # Test of pwer to correctly reject the null model is investigated by allowing one trait to have different rates of evolution to the (fixed rate) first trait
 
-#install.packages("devtools")
+install.packages("devtools")
 library(devtools)
-#install_github('myllym/spptest', ref = 'no_fastdepth')
+install_github('myllym/spptest', ref = 'no_fastdepth')
 
 library(devtools)
 library(spptest)
