@@ -9,3 +9,7 @@ The file
 The file 
   empirical.tests.R 
 is used to produce figure 4 and is the recommended pipeline for using datasets that would be analysed via the function dtt in the R library geiger.
+
+The file
+  multi-trait.rank.test.power.R
+is used to produce the data for the figure 4 that investigates the power to detect non-random trait evolution when there are two traits using the rank envelope test on the multivariate disparity value.
