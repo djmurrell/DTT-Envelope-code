@@ -1,50 +1,36 @@
+################################################################################################
+# This is the script to produce the empirical examples figure in Murrell (2017)
+# Note that the user needs to download the cichlid fish data before this example can be run
+# Details of where to find this dataset is given below. All other data is found in geiger
+################################################################################################
+
+
 install.packages("devtools")
 library(devtools)
 install_github('myllym/spptest', ref = 'no_fastdepth')
+
+library(devtools)
 library(spptest)
 library(geiger)
-#Number of simulations to sample from null model of Brownian evolution.
-#Recommendation for at least 2500
-nsims=5000
-#Slight alteration of dtt function in geiger
-source("dtt1.R")
+library(phytools)
 
 
-####################################################
-#
-#	Generic function to compute rank envelope test
-#
-####################################################
-
-rank_env_dtt<-function(x, Plot=T)
-{
-		
-	spp_num<-length(x$times)		
-	sims<-x$sim
-	sims<-as.matrix(sims)
-
-	s1<-sims[-c(1),]
-	
-	r<-x$times[-c(1)]
-
-	r<-as.vector(r)
-
-	obs<-as.vector(x$dtt)
-	obs<-obs[-c(1)]
-
-	c1<-list(r,obs, s1)
-	names(c1)=c("r","obs","sim_m") 
-	c2<-create_curve_set(c1)
-
-	res<-rank_envelope(c2)
-	
-	if(Plot==T)
-	plot(res, xlab="Relative time", ylab="Disparity", main="")	
-	return(res)	
-}
+#Set the number of MC trait evolution simulations to run on each tree
+nsims<-2500
 
 
+################
+#NEED to use CORRECTED source code from https://github.com/mwpennell/geiger-v2/blob/master/R/disparity.R
+################
+source("https://raw.githubusercontent.com/mwpennell/geiger-v2/master/R/disparity.R")
 
+#Modified dtt function to call modified MDI function and allow user to change y-axis
+source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/dtt1.R")
+
+#Modified code for two sided MDI test
+source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/getMDI1.R")
+
+source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/rank_dtt.R")
 
 #########################################################################
 #	
@@ -52,15 +38,15 @@ rank_env_dtt<-function(x, Plot=T)
 #
 #########################################################################
 
-
+	#pdf("comparison_data.final.pdf")
+	
 	data(geospiza)
 	
-	pdf("comparison_data.final.pdf")
-
 	layout(matrix(c(1,2,3,4,5,6), 3, 2, byrow = TRUE), widths=c(2,2,2),heights=c(2,2,2))
 	
 	#Compute and plot the DTT with pointwise envelope
-	d1<-dtt1(geospiza$phy, geospiza$dat[,3], plot=T, nsim=nsims, Ylim=c(0,2))	
+	d1<-dtt1(geospiza$phy, geospiza$dat[,3], plot=T, nsim=nsims, Ylim=c(0,2), calculateMDIp=T)	
+	cat("MDI-pvalue= ", d1$MDIp, "\n")
 	
 	ylim<-par("yaxp")
 	
@@ -90,7 +76,8 @@ data(whales)
 	
 	#Compute and plot the DTT with pointwise envelope
 	d1<-dtt1(whales$phy, whales$dat[,2], plot=T, nsim=nsims, calculateMDIp=T, Ylim=c(0,1))
-
+	cat("MDI-pvalue= ", d1$MDIp, "\n")
+	
 	ylim<-par("yaxp")
 	
 	#Compute the rank envelope
@@ -122,7 +109,7 @@ load("06.23.2016_DTT_wkspc.RData")
 	t1<-data.frame(t1=analdata_F[,1-7], row.names=rn)
 	
 	#Compute and plot the DTT with pointwise envelope
-	d1<-dtt1(analtree_F, t1, plot=T, nsim=nsims, calculateMDIp=F, Ylim=c(0,6))
+	d1<-dtt(analtree_F, t1, plot=T, nsim=nsims, calculateMDIp=F, Ylim=c(0,6))
 
 	ylim<-par("yaxp")
 	
@@ -140,4 +127,4 @@ load("06.23.2016_DTT_wkspc.RData")
 	lines(x, r1$data_curve, lwd=1)
 	lines(x, r1$central_curve, lty=2)
 
-dev.off()
+#dev.off()
