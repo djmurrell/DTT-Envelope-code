@@ -9,7 +9,6 @@ install.packages("devtools")
 library(devtools)
 install_github('myllym/spptest', ref = 'no_fastdepth')
 
-library(devtools)
 library(spptest)
 library(geiger)
 
