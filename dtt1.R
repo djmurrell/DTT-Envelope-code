@@ -44,7 +44,7 @@ dtt1<-function (phy, data, index = c("avg.sq", "avg.manhattan", "num.states"),
     if (any(drp)) 
         res = res[-which(drp)]
     if (calculateMDIp) {
-        pVal <- getMDIp(res)
+        pVal <- getMDIp1(res)
         res <- c(res, MDIpVal = pVal)
     }
     return(res)
