@@ -4,6 +4,7 @@ install_github('myllym/spptest', ref = 'no_fastdepth')
 
 library(spptest)
 library(geiger)
+library(ape)
 library(phytools)
 
 
