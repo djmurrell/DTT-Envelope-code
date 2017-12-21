@@ -2,6 +2,8 @@
 
 This code is used to produce the figures in the revised manuscript "A global envelope test to detect non-random bursts of trait evolution" (an earlier version of which can be found here doi: https://doi.org/10.1101/175968).
 
+All scripts will require the following packages to be installed on your computer: (1) phytools; (2) geiger; (3) ape.
+
 The file 
   figures.true-false.positives.R 
  is R script to produce figures 2 and 3 that investigate the false and true positive rates of the candidate null model tests.
