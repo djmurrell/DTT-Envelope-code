@@ -52,7 +52,7 @@ source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/ran
 	r1$p_interval
 
 	#We'll use a bespoke plot to make it look 'pretty'
-	plot(c(0,1), ylim[1:2], yaxp=c(ylim[1],ylim[2],ylim[3]), type="n", xlab="relative time", frame.plot=F, ylab="disparity", main=pt)
+	plot(c(0,1), ylim[1:2], yaxp=c(ylim[1],ylim[2],ylim[3]), type="n", xlab="relative time", frame.plot=F, ylab="disparity", main="")
 	x<-r1$r
 	y1<-r1$upper
 	y2<-r1$lower
