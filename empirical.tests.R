@@ -12,11 +12,13 @@ install_github('myllym/spptest', ref = 'no_fastdepth')
 library(devtools)
 library(spptest)
 library(geiger)
-library(phytools)
 
 
 #Set the number of MC trait evolution simulations to run on each tree
 nsims<-2500
+
+#NEED to use CORRECTED source code from https://github.com/mwpennell/geiger-v2/blob/master/R/disparity.R
+source("https://raw.githubusercontent.com/mwpennell/geiger-v2/master/R/disparity.R")
 
 #Modified dtt function to call modified MDI function and allow user to change y-axis
 source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/dtt1.R")
