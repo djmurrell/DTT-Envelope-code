@@ -51,9 +51,8 @@ source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/ran
 	#Note that the p-value is a range because the ranks will almost always lead to some ties
 	r1$p_interval
 
-
 	#We'll use a bespoke plot to make it look 'pretty'
-	plot(c(0,1), ylim[1:2], yaxp=c(ylim[1],ylim[2],ylim[3]), type="n", xlab="relative time", frame.plot=F, ylab="disparity", main="")
+	plot(c(0,1), ylim[1:2], yaxp=c(ylim[1],ylim[2],ylim[3]), type="n", xlab="relative time", frame.plot=F, ylab="disparity", main=pt)
 	x<-r1$r
 	y1<-r1$upper
 	y2<-r1$lower
