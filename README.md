@@ -12,8 +12,8 @@ is used to produce figure 4 and is the recommended pipeline for using datasets t
 
 The file
   multi-trait.rank.test.power.R
-is used to produce the data for the figure 4 that investigates the power to detect non-random trait evolution when there are two traits using the rank envelope test on the multivariate disparity value.
+is used to produce the data for the figure S5 (supplementary information) that investigates the power to detect non-random trait evolution when there are two traits using the rank envelope test on the multivariate disparity value.
 
 The file
   multi-trait.concat.rank.power.R
-is used to produce the data for the figure 4 that investigates the power to detect non-random trait evolution when there are two traits using the concatenated rank envelope test on the individual trait disparity values. (It's still a single test.)
+is used to produce the data for the figure S5 (supplementary information) that investigates the power to detect non-random trait evolution when there are two traits using the concatenated rank envelope test on the individual trait disparity values. (It's still a single test.)
