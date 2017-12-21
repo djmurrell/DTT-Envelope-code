@@ -18,18 +18,13 @@ library(phytools)
 #Set the number of MC trait evolution simulations to run on each tree
 nsims<-2500
 
-
-################
-#NEED to use CORRECTED source code from https://github.com/mwpennell/geiger-v2/blob/master/R/disparity.R
-################
-source("https://raw.githubusercontent.com/mwpennell/geiger-v2/master/R/disparity.R")
-
 #Modified dtt function to call modified MDI function and allow user to change y-axis
 source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/dtt1.R")
 
-#Modified code for two sided MDI test
+#Modified code for two sided MDI test. Note this is the CORRECTED version of the MDI test in geiger
 source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/getMDI1.R")
 
+#This function takes a dtt produced object and runs it through the rank envelope test
 source("https://raw.githubusercontent.com/djmurrell/DTT-Envelope-code/master/rank_dtt.R")
 
 #########################################################################
